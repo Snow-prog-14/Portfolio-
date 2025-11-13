@@ -1,21 +1,32 @@
-// ==========================
+// =========================
 // Snowflakes
-// ==========================
+// =========================
 const snowContainer = document.getElementById('snowflakes');
-const snowCount = 60; // more flakes
+const snowCount = 70;
+
 for (let i = 0; i < snowCount; i++) {
     let snow = document.createElement('div');
     snow.classList.add('snowflake');
     snow.style.left = Math.random() * window.innerWidth + 'px';
-    snow.style.fontSize = 12 + Math.random() * 10 + 'px'; // 12-22px
-    snow.style.animationDuration = 5 + Math.random() * 10 + 's';
+    snow.style.fontSize = 10 + Math.random() * 15 + 'px';
+    snow.style.animationDuration = 8 + Math.random() * 5 + 's';
+    snow.style.opacity = 0.5 + Math.random() * 0.5;
     snow.innerHTML = '❄';
     snowContainer.appendChild(snow);
+
+    snow.animate([
+        { transform: `translateY(-50px)`, opacity: snow.style.opacity },
+        { transform: `translateY(${window.innerHeight + 50}px) rotate(360deg)`, opacity: 0 }
+    ], {
+        duration: (8 + Math.random() * 5) * 1000,
+        iterations: Infinity,
+        delay: Math.random() * 5000
+    });
 }
 
-// ==========================
-// Animate Skills
-// ==========================
+// =========================
+// Skills animation
+// =========================
 const skills = [95, 70, 80]; // HTML/CSS, JS, Python
 document.querySelectorAll('.skill-circle .progress').forEach((circle, i) => {
     const radius = 70;
@@ -24,15 +35,15 @@ document.querySelectorAll('.skill-circle .progress').forEach((circle, i) => {
     circle.style.strokeDashoffset = circumference - (skills[i]/100)*circumference;
 });
 
-// ==========================
-// Scroll Active Nav
-// ==========================
+// =========================
+// Navbar scroll active link
+// =========================
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 90;
+        const sectionTop = section.offsetTop - 80;
         if (scrollY >= sectionTop) current = section.getAttribute('id');
     });
     navLinks.forEach(link => {
@@ -40,3 +51,27 @@ window.addEventListener('scroll', () => {
         if (link.getAttribute('href').includes(current)) link.classList.add('active');
     });
 });
+
+// =========================
+// Scroll-down arrow animation
+// =========================
+const arrowDots = document.querySelectorAll('.arrow-dot');
+function animateArrow() {
+    arrowDots.forEach((dot, index) => {
+        setTimeout(() => {
+            dot.style.opacity = 1;
+            dot.animate([
+                { transform: 'translateY(0px)', opacity: 1 },
+                { transform: 'translateY(20px)', opacity: 0 }
+            ], {
+                duration: 1000,
+                easing: 'ease-in-out'
+            });
+            setTimeout(() => dot.style.opacity = 0, 1000);
+        }, index * 150);
+    });
+}
+
+// Repeat every 5 seconds
+setInterval(animateArrow, 5000);
+animateArrow();

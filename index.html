@@ -11,7 +11,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
+<!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
 <!-- Custom CSS -->
@@ -23,9 +23,9 @@
 <div id="snowflakes"></div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-blur">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Alejandra Maraasin</a>
+    <a class="navbar-brand" href="#">Alejandra Maraasin</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,28 +42,27 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section id="home">
-    <!-- Scroll Down Indicator -->
-<div id="scroll-indicator">
-    <i class="fas fa-chevron-down"></i>
-</div>
-
-  <div class="hero-content text-center">
-    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
-    <h1 class="hero-title">Alejandra <span class="highlight">Maraasin</span></h1>
-    <p class="hero-subtitle">Web & Software Developer | Creative & Professional</p>
-    <div class="hero-buttons mt-3">
-      <a href="#contact" class="btn btn-primary me-2">Hire Me</a>
-      <a href="#" class="btn btn-outline-light">Download Resume</a>
-    </div>
+  <img src="https://via.placeholder.com/150" alt="Profile Picture">
+  <h1>Alejandra A. Maraasin</h1>
+  <p id="animated-text">Frontend & Software Developer | Creative & Professional</p>
+  <div class="mt-3 hero-buttons">
+    <a href="#contact" class="btn btn-primary me-2">Hire Me</a>
+    <a href="#" class="btn btn-primary">Download Resume</a>
+  </div>
+  <!-- Scroll down arrow -->
+  <div class="scroll-down-arrow">
+    <div class="arrow-dot"></div>
+    <div class="arrow-dot"></div>
+    <div class="arrow-dot"></div>
   </div>
 </section>
 
 <!-- About -->
-<section id="about" class="container section-padding">
-  <h2 class="section-title text-center mb-5">About Me</h2>
-  <div class="row align-items-center">
+<section id="about" class="container">
+  <h2 class="mb-4 text-center">About Me</h2>
+  <div class="row">
     <div class="col-md-4 text-center mb-3">
       <img src="https://via.placeholder.com/200" alt="Profile Pic" class="img-fluid rounded-circle border border-primary">
     </div>
@@ -80,9 +79,9 @@
 </section>
 
 <!-- Skills -->
-<section id="skills" class="container section-padding">
-  <h2 class="section-title text-center mb-5">Skills</h2>
-  <div class="skills-container text-center">
+<section id="skills" class="container">
+  <h2 class="mb-4 text-center">Skills</h2>
+  <div class="skills-container">
     <div class="skill-circle">
       <svg viewBox="0 0 150 150">
         <circle class="bg" cx="75" cy="75" r="70"></circle>
@@ -108,45 +107,39 @@
 </section>
 
 <!-- Services -->
-<section id="services" class="container section-padding">
-  <h2 class="section-title text-center mb-5">Services</h2>
+<section id="services" class="container">
+  <h2 class="mb-4 text-center">Services</h2>
   <div class="row text-center">
-    <div class="col-md-4 mb-3">
-      <div class="service-card">
-        <div class="service-inner">
-          <div class="service-front">
-            <i class="fas fa-laptop-code fa-2x mb-2"></i>
-            <h5>Web Development</h5>
-          </div>
-          <div class="service-back">
-            Front-end and custom websites. Tech: HTML, CSS, JS, Bootstrap.
-          </div>
+    <div class="col-md-4 service-card">
+      <div class="service-inner">
+        <div class="service-front">
+          <i class="fas fa-laptop-code fa-2x mb-2"></i>
+          <h5>Web Development</h5>
+        </div>
+        <div class="service-back">
+          Front-end and custom websites. Tech: HTML, CSS, JS, Bootstrap.
         </div>
       </div>
     </div>
-    <div class="col-md-4 mb-3">
-      <div class="service-card">
-        <div class="service-inner">
-          <div class="service-front">
-            <i class="fas fa-pencil-ruler fa-2x mb-2"></i>
-            <h5>UI/UX Design</h5>
-          </div>
-          <div class="service-back">
-            Creative, clean design for apps and websites. Tools: Figma, Adobe XD.
-          </div>
+    <div class="col-md-4 service-card">
+      <div class="service-inner">
+        <div class="service-front">
+          <i class="fas fa-pencil-ruler fa-2x mb-2"></i>
+          <h5>UI/UX Design</h5>
+        </div>
+        <div class="service-back">
+          Creative, clean design for apps and websites. Tools: Figma, Adobe XD.
         </div>
       </div>
     </div>
-    <div class="col-md-4 mb-3">
-      <div class="service-card">
-        <div class="service-inner">
-          <div class="service-front">
-            <i class="fas fa-code fa-2x mb-2"></i>
-            <h5>Software Development</h5>
-          </div>
-          <div class="service-back">
-            Full-stack solutions and prototyping. Tech: Java, Python, DB.
-          </div>
+    <div class="col-md-4 service-card">
+      <div class="service-inner">
+        <div class="service-front">
+          <i class="fas fa-code fa-2x mb-2"></i>
+          <h5>Software Development</h5>
+        </div>
+        <div class="service-back">
+          Full-stack solutions and prototyping. Tech: Java, Python, DB.
         </div>
       </div>
     </div>
@@ -154,8 +147,8 @@
 </section>
 
 <!-- Portfolio -->
-<section id="portfolio" class="container section-padding">
-  <h2 class="section-title text-center mb-5">Portfolio</h2>
+<section id="portfolio" class="container">
+  <h2 class="mb-4 text-center">Portfolio</h2>
   <div class="row">
     <div class="col-md-6">
       <div class="portfolio-card">
@@ -185,8 +178,8 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="container section-padding">
-  <h2 class="section-title text-center mb-5">Contact Me</h2>
+<section id="contact" class="container">
+  <h2 class="mb-4 text-center">Contact Me</h2>
   <div class="row">
     <div class="col-md-6">
       <form>
@@ -196,7 +189,7 @@
         <button type="submit" class="btn btn-primary w-100">Send Message</button>
       </form>
     </div>
-    <div class="col-md-6 text-center mt-3 mt-md-0">
+    <div class="col-md-6 text-center">
       <p>Email: <a href="mailto:alejandramaraasin0@gmail.com">alejandramaraasin0@gmail.com</a></p>
       <p>
         <a href="https://www.facebook.com/andra.maraasin" target="_blank">Facebook</a> | 
@@ -211,7 +204,9 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- Custom JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
