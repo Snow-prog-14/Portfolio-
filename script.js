@@ -51,27 +51,27 @@ window.addEventListener('scroll', () => {
         if (link.getAttribute('href').includes(current)) link.classList.add('active');
     });
 });
+const scrollIcon = document.querySelector('.scroll-down-icon');
 
-// =========================
-// Scroll-down arrow animation
-// =========================
-const arrowDots = document.querySelectorAll('.arrow-dot');
-function animateArrow() {
-    arrowDots.forEach((dot, index) => {
-        setTimeout(() => {
-            dot.style.opacity = 1;
-            dot.animate([
-                { transform: 'translateY(0px)', opacity: 1 },
-                { transform: 'translateY(20px)', opacity: 0 }
-            ], {
-                duration: 1000,
-                easing: 'ease-in-out'
-            });
-            setTimeout(() => dot.style.opacity = 0, 1000);
-        }, index * 150);
-    });
+function animateScrollIcon() {
+  scrollIcon.style.opacity = '1';
+  scrollIcon.animate([
+    { transform: 'translateX(-50%) translateY(0)', opacity: 1 },
+    { transform: 'translateX(-50%) translateY(20px)', opacity: 0 }
+  ], {
+    duration: 1200,
+    easing: 'ease-in-out'
+  });
+  setTimeout(() => {
+    scrollIcon.style.opacity = '0';
+  }, 1200);
 }
 
-// Repeat every 5 seconds
-setInterval(animateArrow, 5000);
-animateArrow();
+// Animate every 5 seconds
+setInterval(animateScrollIcon, 5000);
+animateScrollIcon();
+
+// Click to scroll to About section
+scrollIcon.addEventListener('click', () => {
+  document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+});
